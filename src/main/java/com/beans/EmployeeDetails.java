@@ -24,7 +24,7 @@ public class EmployeeDetails {
 	private String empAddress;
 	
 	@Column(name="emp_phone")
-	private Integer empPhone;
+	private Long empPhone;
 	
 	@Column(name="emp_username")
 	private String empUsername;
@@ -50,12 +50,12 @@ public class EmployeeDetails {
 		this.empId = empId;
 	}
 
-	public EmployeeDetails(Integer empId, String empName, String empAddress, Integer empPhone, String empUsername,
+	public EmployeeDetails(Integer empId, String empName, String empAddress, Long empPhone, String empUsername,
 			String empPassword, String createdDate, Integer updateStatus, String modifiedDate) {
 		this.empId = empId;
 		this.empName = empName;
 		this.empAddress = empAddress;
-		this.empPhone = empPhone;
+		this.setEmpPhone(empPhone);
 		this.empUsername = empUsername;
 		this.empPassword = empPassword;
 		this.createdDate = createdDate;
@@ -88,14 +88,6 @@ public class EmployeeDetails {
 
 	public void setEmpAddress(String empAddress) {
 		this.empAddress = empAddress;
-	}
-
-	public Integer getEmpPhone() {
-		return empPhone;
-	}
-
-	public void setEmpPhone(Integer empPhone) {
-		this.empPhone = empPhone;
 	}
 
 	public String getEmpUsername() {
@@ -136,6 +128,14 @@ public class EmployeeDetails {
 
 	public void setModifiedDate(String modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+
+	public Long getEmpPhone() {
+		return empPhone;
+	}
+
+	public void setEmpPhone(Long empPhone) {
+		this.empPhone = empPhone;
 	}
 	
 
